@@ -3,7 +3,7 @@ view: cost_rollup {
     explore_source: purchases {
       column: cost { field: purchases.total_cost }
 
-      bind_all_filters: yes
+      bind_all_filters: yes # this makes the rollup respect the filters selections of the explore source
     }
   }
   dimension: cost {

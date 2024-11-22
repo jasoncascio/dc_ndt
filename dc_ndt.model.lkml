@@ -1,6 +1,7 @@
 connection: "jc-looker"
 
 include: "/views/*.view.lkml"
+include: "/dashboards/*"
 
 explore: purchases {
   join: cost_rollup {
