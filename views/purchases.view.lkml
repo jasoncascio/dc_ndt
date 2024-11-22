@@ -22,6 +22,7 @@ view: purchases {
   dimension: cost {
     type: number
     sql: ${TABLE}.cost ;;
+    value_format_name: "usd"
   }
 
   measure: count {
@@ -32,6 +33,14 @@ view: purchases {
   measure: total_cost {
     type: sum
     sql: ${cost} ;;
+    value_format_name: "usd"
+  }
+
+  measure: total_rollup_cost {
+    view_label: "Rollup -> Correct Denominator"
+    type: average
+    sql: ${cost_rollup.cost} ;;
+    value_format_name: usd
   }
 
   set: detail {
